@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Leen</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/styles.css">
+    <link rel="icon" href="../assets/favicon/book.svg">
+
+    <!-- FONT & COLOR PALETTE -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                         'primary': '#ffbf00', // yellow 
+                        'secondary': '#8b6900', // dark yellow
+                        'light-bg': '#ebebeb', // light gray
+                        'dark-text': '#5b5b5b', // dark gray
+                    },
+                    fontFamily: {
+                        sans: ['Montserrat', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+</head>
+<body class="flex flex-col min-h-screen">
+
+    <!-- NAVIGATION BAR -->
+    <header class="sticky top-0 z-50 bg-white navbar-shadow transition-all duration-300">
+        <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- TOP LEFT CORNER -->
+                <div class="flex-shrink-0">
+                    <a href="index.html" class="text-2xl font-extrabold text-gray-900 tracking-tight hover:text-primary transition duration-300">chrisleen<span class="text-primary">.de</span></a>
+                </div>
+                
+                <div class="hidden md:flex space-x-8">
+                    <a href="index.html" class="text-gray-700 hover:text-primary transition duration-300">Home</a>
+                    <a href="about.html" class="text-gray-700 hover:text-primary transition duration-300">About Me</a>
+                    <a href="portfolio.html" class="text-primary font-semibold hover:text-indigo-800 transition duration-300 border-b-2 border-primary">Portfolio</a>
+                    <a href="experience.html" class="text-gray-700 hover:text-primary transition duration-300">Experience</a>
+                    <a href="contact.html" class="text-gray-700 hover:text-primary transition duration-300">Contact</a>
+                    <a href="testimonials.html" class="text-gray-700 hover:text-primary transition duration-300">Testimonials</a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden">
+                    <button id="menu-button" class="text-gray-500 hover:text-gray-700 focus:outline-none focus:ring-2 focus:ring-primary rounded-md p-2 transition duration-300">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="md:hidden absolute top-16 left-0 w-full bg-white border-t border-gray-200 shadow-lg z-40 transition-all duration-300 ease-in-out opacity-0 -translate-y-4 invisible">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="index.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-gray-50 hover:text-primary">Home</a>
+                <a href="about.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-gray-50 hover:text-primary">About Me</a>
+                <a href="portfolio.html" class="block px-3 py-2 rounded-md text-base font-medium text-white bg-primary">Portfolio</a>
+                <a href="experience.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-gray-50 hover:text-primary">Experience</a>
+                <a href="contact.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-gray-50 hover:text-primary">Contact</a>
+                <a href="testimonials.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-gray-50 hover:text-primary">Testimonials</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 flex-grow">
+        
+        <div class="text-center mb-12" data-aos="fade-up">
+            <h1 class="text-5xl font-extrabold text-gray-900">My Best Works</h1>
+            <p class="mt-4 text-xl text-gray-600">
+                A collection of my most significant projects and achievements.
+            </p>
+        </div>
+
+        <div id="portfolio-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Projects will be loaded here -->
+        </div>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="bg-white border-t border-gray-200 mt-auto">
+        <div class="max-w-7xl mx-auto py-6 px-4 overflow-hidden sm:px-6 lg:px-8">
+            <p class="text-center text-sm text-gray-500">
+                Made with ❤︎ Built for FINAL PROJECT.
+            </p>
+        </div>
+    </footer>
+
+    <!-- Project Details Modal -->
+    <div id="project-modal" class="fixed inset-0 z-50 hidden overflow-y-auto" aria-labelledby="modal-title" role="dialog" aria-modal="true">
+        <div class="flex items-end justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0">
+            <div class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity" aria-hidden="true" onclick="closeModal()"></div>
+            <span class="hidden sm:inline-block sm:align-middle sm:h-screen" aria-hidden="true">&#8203;</span>
+            <div class="inline-block align-bottom bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-3xl sm:w-full">
+                <div class="bg-white">
+                    <div class="relative h-64 md:h-[500px] w-full bg-gray-200 group">
+                        <img id="modal-image" src="" alt="" class="w-full h-full object-cover cursor-pointer transition duration-300 group-hover:brightness-90" onclick="openImageModal(this.src)">
+                        
+                        <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
+                            <span class="text-white font-medium text-sm md:text-base drop-shadow-md flex items-center gap-2 bg-black/40 px-4 py-2 rounded-full backdrop-blur-sm border border-white/20">
+                                <i data-lucide="maximize-2" class="w-4 h-4"></i> Click to expand
+                            </span>
+                        </div>
+
+                        <button type="button" class="absolute top-4 right-4 bg-black bg-opacity-50 rounded-full p-2 text-white hover:bg-opacity-75 transition z-10" onclick="closeModal()">
+                            <i data-lucide="x" class="w-6 h-6"></i>
+                        </button>
+                    </div>
+                    <div class="px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
+                        <div class="sm:flex sm:items-start">
+                            <div class="mt-3 text-center sm:mt-0 sm:ml-4 sm:text-left w-full">
+                                <div class="flex justify-between items-center mb-2">
+                                    <h3 class="text-2xl leading-6 font-bold text-gray-900" id="modal-title"></h3>
+                                    <span id="modal-tag" class="px-2 py-1 text-xs font-bold uppercase text-primary bg-yellow-100 rounded-full"></span>
+                                </div>
+                                <div id="modal-technologies" class="flex flex-wrap gap-2 mb-4"></div>
+                                <div class="mt-2">
+                                    <p class="text-sm text-gray-500" id="modal-description"></p>
+                                </div>
+                                <div id="modal-links" class="mt-6 flex gap-3"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Image View Modal -->
+    <div id="image-modal" class="fixed inset-0 z-[60] hidden" aria-labelledby="modal-title" role="dialog" aria-modal="true">
+        <div class="flex items-center justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0">
+            <div class="fixed inset-0 bg-black bg-opacity-90 transition-opacity" aria-hidden="true" onclick="closeImageModal()"></div>
+            <span class="hidden sm:inline-block sm:align-middle sm:h-screen" aria-hidden="true">&#8203;</span>
+            <div class="inline-block align-middle bg-transparent rounded-lg overflow-hidden shadow-xl transform transition-all max-w-5xl w-full">
+                <div class="relative">
+                    <img id="full-image" src="" alt="" class="w-full h-auto max-h-[90vh] object-contain mx-auto">
+                    <button type="button" class="absolute top-4 right-4 bg-black bg-opacity-50 rounded-full p-2 text-white hover:bg-opacity-75 transition" onclick="closeImageModal()">
+                        <i data-lucide="x" class="w-6 h-6"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="../assets/script.js"></script>
+    <script src="../assets/portfolio_data.js"></script>
+    <script>
+        // Modal Functions
+        function openModal(index) {
+            const item = portfolioData[index];
+            document.getElementById('modal-title').textContent = item.title;
+            document.getElementById('modal-description').textContent = item.description;
+            document.getElementById('modal-tag').textContent = item.tag;
+            
+            const modalImage = document.getElementById('modal-image');
+            modalImage.src = item.image;
+            modalImage.className = `w-full h-full object-cover cursor-pointer ${item.modalObjectPosition === 'top' ? 'object-top' : 'object-center'}`;
+            
+            // Technologies
+            const techContainer = document.getElementById('modal-technologies');
+            techContainer.innerHTML = '';
+            if (item.technologies) {
+                item.technologies.forEach(tech => {
+                    const span = document.createElement('span');
+                    span.className = 'px-2.5 py-0.5 rounded-full bg-gray-100 text-gray-700 text-xs border border-gray-200';
+                    span.textContent = tech;
+                    techContainer.appendChild(span);
+                });
+            }
+
+            // Links
+            const linksContainer = document.getElementById('modal-links');
+            linksContainer.innerHTML = '';
+            if (item.link) {
+                const a = document.createElement('a');
+                a.href = item.link;
+                a.target = '_blank';
+                a.className = 'inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-all h-9 px-4 py-2 bg-primary text-white hover:bg-secondary shadow-sm';
+                
+                let iconName = 'external-link';
+                let buttonText = 'View Project';
+                
+                if (item.linkType === 'github') {
+                    iconName = 'github';
+                    buttonText = 'View on GitHub';
+                } else if (item.linkType === 'facebook') {
+                    iconName = 'facebook';
+                    buttonText = 'View on Facebook';
+                }
+
+                a.innerHTML = `<i data-lucide="${iconName}" class="w-4 h-4"></i> ${buttonText}`;
+                linksContainer.appendChild(a);
+            }
+
+            document.getElementById('project-modal').classList.remove('hidden');
+            lucide.createIcons();
+        }
+
+        function closeModal() {
+            document.getElementById('project-modal').classList.add('hidden');
+        }
+
+        function openImageModal(src) {
+            document.getElementById('full-image').src = src;
+            document.getElementById('image-modal').classList.remove('hidden');
+            lucide.createIcons();
+        }
+
+        function closeImageModal() {
+            document.getElementById('image-modal').classList.add('hidden');
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const container = document.getElementById('portfolio-container');
+            
+            if (typeof portfolioData !== 'undefined') {
+                portfolioData.forEach((item, index) => {
+                    const delay = (index + 1) * 100;
+                    const card = document.createElement('div');
+                    card.className = 'project-card bg-white rounded-xl overflow-hidden border border-gray-200 cursor-pointer hover:shadow-lg transition-all duration-300 flex flex-col h-full';
+                    card.setAttribute('data-aos', 'fade-up');
+                    card.setAttribute('data-aos-delay', delay);
+                    card.onclick = () => openModal(index);
+                    
+                    const objectPositionClass = item.objectPosition === 'top' ? 'object-top' : 'object-center';
+
+                    // Generate tags HTML
+                    let tagsHtml = '';
+                    if (item.technologies) {
+                        tagsHtml = `<div class="flex flex-wrap gap-1 mt-auto pt-4">
+                            ${item.technologies.slice(0, 3).map(tech => 
+                                `<span class="text-[10px] px-2 py-1 bg-gray-100 rounded-full text-gray-600">${tech}</span>`
+                            ).join('')}
+                            ${item.technologies.length > 3 ? `<span class="text-[10px] px-2 py-1 bg-gray-100 rounded-full text-gray-600">+${item.technologies.length - 3}</span>` : ''}
+                        </div>`;
+                    }
+
+                    card.innerHTML = `
+                        <div class="project-image-container bg-gray-200 relative overflow-hidden group h-48 shrink-0">
+                            <img src="${item.image}" alt="${item.title}" class="w-full h-full object-cover ${objectPositionClass} transition duration-500 group-hover:scale-105">
+                            <div class="absolute inset-0 bg-black opacity-0 group-hover:opacity-10 transition duration-300"></div>
+                        </div>
+                        <div class="p-6 flex flex-col flex-grow">
+                            <div class="flex justify-between items-center mb-2">
+                                <span class="text-xs font-bold uppercase text-primary tracking-wider">${item.tag}</span>
+                            </div>
+                            <h3 class="text-xl font-bold text-gray-900 mb-2 group-hover:text-primary transition-colors">${item.title}</h3>
+                            <p class="text-gray-600 text-sm mb-4 line-clamp-3">
+                                ${item.description}
+                            </p>
+                            ${tagsHtml}
+                        </div>
+                    `;
+                    container.appendChild(card);
+                });
+                lucide.createIcons();
+            }
+        });
+    </script>
+</body>
+</html>

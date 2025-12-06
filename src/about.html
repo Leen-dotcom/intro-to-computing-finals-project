@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Leen</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/styles.css">
+    <link rel="icon" href="../assets/favicon/icon.svg">
+
+    <!-- FONT & COLOR PALETTE -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary': '#ffbf00', // yellow 
+                        'secondary': '#8b6900', // dark yellow
+                        'light-bg': '#ebebeb', // light gray
+                        'dark-text': '#5b5b5b', // dark gray
+                    },
+                    fontFamily: {
+                        sans: ['Montserrat', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+</head>
+<body class="flex flex-col min-h-screen">
+
+    <!-- NAVIGATION BAR -->
+    <header class="sticky top-0 z-50 bg-white navbar-shadow transition-all duration-300">
+        <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!--TOP LEFT CORNER -->
+                <div class="flex-shrink-0">
+                    <a href="index.html" class="text-2xl font-extrabold text-gray-900 tracking-tight hover:text-primary transition duration-300">chrisleen<span class="text-primary">.de</span></a>
+                </div>
+                
+                <div class="hidden md:flex space-x-8">
+                    <a href="index.html" class="text-gray-700 hover:text-primary transition duration-300">Home</a>
+                    <a href="about.html" class="text-primary font-semibold hover:text-indigo-800 transition duration-300 border-b-2 border-primary">About Me</a>
+                    <a href="portfolio.html" class="text-gray-700 hover:text-primary transition duration-300">Portfolio</a>
+                    <a href="experience.html" class="text-gray-700 hover:text-primary transition duration-300">Experience</a>
+                    <a href="contact.html" class="text-gray-700 hover:text-primary transition duration-300">Contact</a>
+                    <a href="testimonials.html" class="text-gray-700 hover:text-primary transition duration-300">Testimonials</a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden">
+                    <button id="menu-button" class="text-gray-500 hover:text-gray-700 focus:outline-none focus:ring-2 focus:ring-primary rounded-md p-2 transition duration-300">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="md:hidden absolute top-16 left-0 w-full bg-white border-t border-gray-200 shadow-lg z-40 transition-all duration-300 ease-in-out opacity-0 -translate-y-4 invisible">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="index.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-gray-50 hover:text-primary">Home</a>
+                <a href="about.html" class="block px-3 py-2 rounded-md text-base font-medium text-white bg-primary">About Me</a>
+                <a href="portfolio.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-gray-50 hover:text-primary">Portfolio</a>
+                <a href="experience.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-gray-50 hover:text-primary">Experience</a>
+                <a href="contact.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-gray-50 hover:text-primary">Contact</a>
+                <a href="testimonials.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-gray-50 hover:text-primary">Testimonials</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 flex-grow">
+        
+        <h1 class="text-5xl font-extrabold text-gray-900 text-center mb-12" data-aos="fade-up">About Me</h1>
+        
+        <div class="lg:grid lg:grid-cols-2 lg:gap-16 items-start">
+            <!-- Image/Profile Section -->
+            <div class="relative mb-12 lg:mb-0" data-aos="fade-right">
+                <div class="aspect-w-3 aspect-h-4 rounded-2xl overflow-hidden shadow-2xl transform rotate-3 hover:rotate-0 transition duration-500">
+                     <!-- Placeholder image if original is missing -->
+                    <img class="object-cover w-full h-full" src="../assets/images/leen_about_me_shot.webp" alt="Chrisleen Profile">
+                </div>
+                <div class="absolute -bottom-6 -right-6 w-24 h-24 bg-primary rounded-full flex items-center justify-center text-white font-bold text-xl shadow-lg animate-bounce">
+                    Hello!
+                </div>
+            </div>
+
+            <!-- Content Section -->
+            <div data-aos="fade-left">
+                <h2 class="text-3xl font-bold text-gray-900 mb-6">Who am I?</h2>
+                <p class="text-lg text-gray-600 mb-6 leading-relaxed">
+                    I am Chrisleen Villacorza, a passionate individual with a love for technology and design. My journey began with a curiosity about how things work, which led me to the world of software engineering.
+                </p>
+                <p class="text-lg text-gray-600 mb-6 leading-relaxed">
+                    I believe in the power of code to solve real-world problems and the impact of design to make those solutions accessible and enjoyable.
+                </p>
+
+                <div class="mt-10">
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">My Skills</h3>
+                    <div class="grid grid-cols-2 gap-4">
+                        <ul class="skill-list space-y-2 text-gray-600">
+                            <li>HTML5 & CSS3</li>
+                            <li>JavaScript (ES6+)</li>
+                            <li>Tailwind CSS</li>
+                            <li>React / Next.js</li>
+                        </ul>
+                        <ul class="skill-list space-y-2 text-gray-600">
+                            <li>C++ Programming</li>
+                            <li>SQL Database</li>
+                            <li>Adobe Photoshop</li>
+                            <li>Video Editing</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="mt-10">
+                    <a href="contact.html" class="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-primary hover:bg-secondary transition duration-300 transform hover:scale-105">
+                        Let's Work Together
+                    </a>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="bg-white border-t border-gray-200 mt-auto">
+        <div class="max-w-7xl mx-auto py-6 px-4 overflow-hidden sm:px-6 lg:px-8">
+            <p class="text-center text-sm text-gray-500">
+                Made with ❤︎ Built for FINAL PROJECT.
+            </p>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="../assets/script.js"></script>
+
+</body>
+</html>

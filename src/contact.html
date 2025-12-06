@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - Leen</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/styles.css">
+    <link rel="icon" href="../assets/favicon/contact.svg">
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- FONT & COLOR PALETE -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary': '#ffbf00', // yellow 
+                        'secondary': '#8b6900', // dark yellow
+                        'light-bg': '#ebebeb', // light gray
+                        'dark-text': '#5b5b5b', // dark gray
+                    },
+                    fontFamily: {
+                        sans: ['Montserrat', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+</head>
+<body class="flex flex-col min-h-screen">
+
+    <!-- NAVIGATION BAR -->
+    <header class="sticky top-0 z-50 bg-white navbar-shadow transition-all duration-300">
+        <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- TOP LEFT CORNER -->
+                <div class="flex-shrink-0">
+                    <a href="index.html" class="text-2xl font-extrabold text-gray-900 tracking-tight hover:text-primary transition duration-300">chrisleen<span class="text-primary">.de</span></a>
+                </div>
+                
+                <div class="hidden md:flex space-x-8">
+                    <a href="index.html" class="text-gray-700 hover:text-primary transition duration-300">Home</a>
+                    <a href="about.html" class="text-gray-700 hover:text-primary transition duration-300">About Me</a>
+                    <a href="portfolio.html" class="text-gray-700 hover:text-primary transition duration-300">Portfolio</a>
+                    <a href="experience.html" class="text-gray-700 hover:text-primary transition duration-300">Experience</a>
+                    <a href="contact.html" class="text-primary font-semibold hover:text-indigo-800 transition duration-300 border-b-2 border-primary">Contact</a>
+                    <a href="testimonials.html" class="text-gray-700 hover:text-primary transition duration-300">Testimonials</a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden">
+                    <button id="menu-button" class="text-gray-500 hover:text-gray-700 focus:outline-none focus:ring-2 focus:ring-primary rounded-md p-2 transition duration-300">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="md:hidden absolute top-16 left-0 w-full bg-white border-t border-gray-200 shadow-lg z-40 transition-all duration-300 ease-in-out opacity-0 -translate-y-4 invisible">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="index.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-gray-50 hover:text-primary">Home</a>
+                <a href="about.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-gray-50 hover:text-primary">About Me</a>
+                <a href="portfolio.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-gray-50 hover:text-primary">Portfolio</a>
+                <a href="experience.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-gray-50 hover:text-primary">Experience</a>
+                <a href="contact.html" class="block px-3 py-2 rounded-md text-base font-medium text-white bg-primary">Contact</a>
+                <a href="testimonials.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-gray-50 hover:text-primary">Testimonials</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 flex-grow">
+        
+        <div class="text-center mb-12" data-aos="fade-up">
+            <h1 class="text-5xl font-extrabold text-gray-900">Make your Spark</h1>
+            <p class="mt-4 text-xl text-gray-600">
+                Get in touch, my inbox is open! Contact me, the details is provided below.
+            </p>
+        </div>
+        
+        <div class="lg:grid lg:grid-cols-3 lg:gap-12">
+            
+            <!-- CONTACT & SOCIAL DETAILS -->
+            <div class="lg:col-span-1 mb-10 lg:mb-0 bg-white p-8 rounded-xl shadow-lg h-full" data-aos="fade-right">
+                <h3 class="text-2xl font-bold text-gray-900 mb-6">Contact Info</h3>
+                
+                <div class="space-y-6">
+                    <div class="flex items-start">
+                        <div class="flex-shrink-0">
+                            <i data-lucide="mail" class="h-6 w-6 text-primary"></i>
+                        </div>
+                        <div class="ml-3 text-base text-gray-500">
+                            <p>chrisleen@example.com</p>
+                            <p class="text-sm text-gray-400">Send me an email anytime!</p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start">
+                        <div class="flex-shrink-0">
+                            <i data-lucide="phone" class="h-6 w-6 text-primary"></i>
+                        </div>
+                        <div class="ml-3 text-base text-gray-500">
+                            <p>+1 (555) 123-4567</p>
+                            <p class="text-sm text-gray-400">Mon-Fri, 9am-6pm</p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start">
+                        <div class="flex-shrink-0">
+                            <i data-lucide="map-pin" class="h-6 w-6 text-primary"></i>
+                        </div>
+                        <div class="ml-3 text-base text-gray-500">
+                            <p>Cagayan de Oro City</p>
+                            <p class="text-sm text-gray-400">Philippines</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-10">
+                    <h4 class="text-lg font-semibold text-gray-900 mb-4">Follow Me</h4>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-primary transition duration-300 transform hover:scale-110">
+                            <i data-lucide="facebook" class="h-6 w-6"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-primary transition duration-300 transform hover:scale-110">
+                            <i data-lucide="twitter" class="h-6 w-6"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-primary transition duration-300 transform hover:scale-110">
+                            <i data-lucide="instagram" class="h-6 w-6"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-primary transition duration-300 transform hover:scale-110">
+                            <i data-lucide="linkedin" class="h-6 w-6"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CONTACT FORM -->
+            <div class="lg:col-span-2 bg-white p-8 rounded-xl shadow-lg" data-aos="fade-left">
+                <form action="#" method="POST" class="space-y-6">
+                    <div class="grid grid-cols-1 gap-y-6 gap-x-4 sm:grid-cols-2">
+                        <div>
+                            <label for="first-name" class="block text-sm font-medium text-gray-700">First name</label>
+                            <div class="mt-1">
+                                <input type="text" name="first-name" id="first-name" autocomplete="given-name" class="py-3 px-4 block w-full shadow-sm focus:ring-primary focus:border-primary border-gray-300 rounded-md bg-gray-50">
+                            </div>
+                        </div>
+                        <div>
+                            <label for="last-name" class="block text-sm font-medium text-gray-700">Last name</label>
+                            <div class="mt-1">
+                                <input type="text" name="last-name" id="last-name" autocomplete="family-name" class="py-3 px-4 block w-full shadow-sm focus:ring-primary focus:border-primary border-gray-300 rounded-md bg-gray-50">
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <label for="email" class="block text-sm font-medium text-gray-700">Email</label>
+                        <div class="mt-1">
+                            <input id="email" name="email" type="email" autocomplete="email" class="py-3 px-4 block w-full shadow-sm focus:ring-primary focus:border-primary border-gray-300 rounded-md bg-gray-50">
+                        </div>
+                    </div>
+                    <div>
+                        <label for="message" class="block text-sm font-medium text-gray-700">Message</label>
+                        <div class="mt-1">
+                            <textarea id="message" name="message" rows="4" class="py-3 px-4 block w-full shadow-sm focus:ring-primary focus:border-primary border-gray-300 rounded-md bg-gray-50"></textarea>
+                        </div>
+                    </div>
+                    <div>
+                        <button type="submit" class="w-full inline-flex justify-center py-3 px-6 border border-transparent shadow-sm text-base font-medium rounded-md text-white bg-primary hover:bg-secondary focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary transition duration-300 transform hover:scale-105">
+                            Send Message
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="bg-white border-t border-gray-200 mt-auto">
+        <div class="max-w-7xl mx-auto py-6 px-4 overflow-hidden sm:px-6 lg:px-8">
+            <p class="text-center text-sm text-gray-500">
+                Made with ❤︎ Built for FINAL PROJECT.
+            </p>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        lucide.createIcons();
+    </script>
+    <script src="../assets/script.js"></script>
+
+</body>
+</html>

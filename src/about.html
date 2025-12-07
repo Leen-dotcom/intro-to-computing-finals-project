@@ -36,10 +36,10 @@
             <div class="flex justify-between items-center h-16">
                 <!--TOP LEFT CORNER -->
                 <div class="flex-shrink-0">
-                    <a href="index.html" class="text-2xl font-extrabold text-gray-900 tracking-tight hover:text-primary transition duration-300">chrisleen<span class="text-primary">.de</span></a>
+                    <a href="../" class="text-2xl font-extrabold text-gray-900 tracking-tight hover:text-primary transition duration-300">chrisleen<span class="text-primary">.de</span></a>
                 </div>
                 
-                <div class="hidden md:flex space-x-8">
+                <div class="hidden lg:flex space-x-8">
                     <a href="index.html" class="text-gray-700 hover:text-primary transition duration-300">Home</a>
                     <a href="about.html" class="text-primary font-semibold hover:text-indigo-800 transition duration-300 border-b-2 border-primary">About Me</a>
                     <a href="portfolio.html" class="text-gray-700 hover:text-primary transition duration-300">Portfolio</a>
@@ -49,7 +49,7 @@
                 </div>
 
                 <!-- Mobile Menu Button -->
-                <div class="md:hidden">
+                <div class="lg:hidden">
                     <button id="menu-button" class="text-gray-500 hover:text-gray-700 focus:outline-none focus:ring-2 focus:ring-primary rounded-md p-2 transition duration-300">
                         <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
@@ -60,7 +60,7 @@
         </nav>
 
         <!-- Mobile Menu -->
-        <div id="mobile-menu" class="md:hidden absolute top-16 left-0 w-full bg-white border-t border-gray-200 shadow-lg z-40 transition-all duration-300 ease-in-out opacity-0 -translate-y-4 invisible">
+        <div id="mobile-menu" class="lg:hidden absolute top-16 left-0 w-full bg-white border-t border-gray-200 shadow-lg z-40 transition-all duration-300 ease-in-out opacity-0 -translate-y-4 invisible">
             <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
                 <a href="index.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-gray-50 hover:text-primary">Home</a>
                 <a href="about.html" class="block px-3 py-2 rounded-md text-base font-medium text-white bg-primary">About Me</a>
@@ -78,12 +78,12 @@
         
         <div class="lg:grid lg:grid-cols-2 lg:gap-16 items-start">
             <!-- Image/Profile Section -->
-            <div class="relative mb-12 lg:mb-0" data-aos="fade-right">
-                <div class="aspect-w-3 aspect-h-4 rounded-2xl overflow-hidden shadow-2xl transform rotate-3 hover:rotate-0 transition duration-500">
+            <div class="relative mb-12 lg:mb-0 max-w-sm mx-auto lg:max-w-none" data-aos="fade-right">
+                <div class="aspect-w-3 aspect-h-4 rounded-2xl overflow-hidden shadow-2xl transform rotate-2 sm:rotate-3 hover:rotate-0 transition duration-500">
                      <!-- Placeholder image if original is missing -->
                     <img class="object-cover w-full h-full" src="../assets/images/leen_about_me_shot.webp" alt="Chrisleen Profile">
                 </div>
-                <div class="absolute -bottom-6 -right-6 w-24 h-24 bg-primary rounded-full flex items-center justify-center text-white font-bold text-xl shadow-lg animate-bounce">
+                <div class="absolute -bottom-4 -right-2 sm:-bottom-6 sm:-right-6 w-20 h-20 sm:w-24 sm:h-24 bg-primary rounded-full flex items-center justify-center text-white font-bold text-lg sm:text-xl shadow-lg animate-bounce">
                     Hello!
                 </div>
             </div>
@@ -100,7 +100,7 @@
 
                 <div class="mt-10">
                     <h3 class="text-2xl font-bold text-gray-900 mb-4">My Skills</h3>
-                    <div class="grid grid-cols-2 gap-4">
+                    <div class="grid grid-cols-2 gap-4 px-4">
                         <ul class="skill-list space-y-2 text-gray-600">
                             <li>HTML5 & CSS3</li>
                             <li>JavaScript (ES6+)</li>
